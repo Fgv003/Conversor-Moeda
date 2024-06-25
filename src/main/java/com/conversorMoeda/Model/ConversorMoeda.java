@@ -1,13 +1,11 @@
 package com.conversorMoeda.Model;
 
-import org.springframework.boot.json.JsonParseException;
-import org.springframework.boot.json.JsonParser;
 
-import java.util.List;
-import java.util.Map;
+import com.google.gson.annotations.SerializedName;
 
-public record ConversorMoeda( Integer moedaInicial,
-                             Integer moedaFinal,
-                             Integer valorInicial,
-                             Integer valorFinal)  {
+
+public record ConversorMoeda(@SerializedName("base_code") String moedaInicial,
+                             @SerializedName("target_code")String moedaFinal,
+                             @SerializedName("conversion_rate")Double taxaConversao ,
+                             @SerializedName("conversion_result") Double resultadoConversao)  {
 }
